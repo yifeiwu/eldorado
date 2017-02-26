@@ -10,6 +10,7 @@ This app is used to calculate the number of trips/number of ships needed to exac
 
 ## Setup
 
+`bundle` install gem dependencies
 `rake db:migrate` to create your databases
 `rails dev:cache` if you're running in development mode and want to cache the lookup table
 `rails s` to run the server
