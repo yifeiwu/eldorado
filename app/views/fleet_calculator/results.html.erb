@@ -1,4 +1,4 @@
-<h1> Manifest Results for Total Cargo of <%= @weight %> Tons</h1>
+<h1> Fleet Composition for Total Cargo of <%= @weight %> Tons</h1>
 
 <% if @result.nil? %>
 <p> No suitable fleet found. Note max fleet size is 10 ships per class. </p>
@@ -8,7 +8,7 @@
     <tr>
       <th>Ship Name</th>
       <th>Ship Capacity</th>
-      <th>Ship Quantity</th>
+      <th>Ship/Trip Quantity</th>
     </tr>
   </thead>
   <tbody>

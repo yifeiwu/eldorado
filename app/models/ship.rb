@@ -1,4 +1,9 @@
 class Ship < ApplicationRecord
+
+	validates :ship_capacity, numericality: { only_integer: true, greater_than: 0 }
+	validates :ship_name, presence: true
+
+
 	def self.ship_names 
 		Ship.all.collect{|ship| ship.ship_name}
 	end

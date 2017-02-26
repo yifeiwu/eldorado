@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Eldorado</title>
+    <title>El Dorado</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +9,9 @@
   </head>
 
   <body>
+  <li><%= link_to "Edit fleet", ships_path %></li>
+  <li><%= link_to "Calculate composition", fleet_calculator_show_path %></li>
+  <hr>
     <%= yield %>
   </body>
 </html>

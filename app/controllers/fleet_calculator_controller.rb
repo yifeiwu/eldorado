@@ -4,8 +4,6 @@ class FleetCalculatorController < ApplicationController
 
 	before_action :set_calculator, :fleet_calculator_params, only: [:weight_calculate]
 
-
-
 	def weight_calculate
 		@weight = fleet_calculator_params.to_i
 		@result = @calculator.get_manifest(@weight)
@@ -30,18 +28,12 @@ class FleetCalculatorController < ApplicationController
     end
 
     def create_calculator
-    	time = Time.now
     	calc = CarryCalculator.new
     	Ship.all.each do |ship|
     		calc.add_container(ship.ship_name, ship.ship_capacity)
     	end
     	calc.preprocess
-    	puts Time.now-time
     	calc
     end
-
-
-
-
 
 end
