@@ -1,0 +1,26 @@
+<h1> Manifest Results for Total Cargo of <%= @weight %> Tons</h1>
+
+<% if @result.nil? %>
+<p> No suitable fleet found. Note max fleet size is 10 ships per class. </p>
+<% else %>
+<table>
+  <thead>
+    <tr>
+      <th>Ship Name</th>
+      <th>Ship Capacity</th>
+      <th>Ship Quantity</th>
+    </tr>
+  </thead>
+  <tbody>
+
+<% @result.each_with_index do |qty, index| %>
+<% next if qty == 0 %>
+<tr>
+<td> <%= Ship.ship_names[index] %> </td>
+<td> <%= Ship.ship_capacities[index] %> tons</td>
+<td> <%= qty %> </td>
+</tr>
+<% end %>
+</tbody>
+</table>
+<% end %>

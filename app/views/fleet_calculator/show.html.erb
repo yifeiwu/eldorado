@@ -1,0 +1,7 @@
+<h1> Fleet Calculator </h1>
+<h3> Enter a total weight and click calculate to attempt to find the smallest number of trips/ships needed to carry that exact weight</h3>
+
+<%= form_tag(fleet_calculator_calculate_path, :method => "get", id: "search-form") do %>
+    <%= number_field_tag :total_weight, params[:total_weight], placeholder: "enter total weight" %>
+    <%= submit_tag "Calculate", :name => nil %>
+<% end %>

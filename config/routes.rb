@@ -1,3 +1,8 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :ships
+
+  get 'fleet_calculator/show', to: 'fleet_calculator#show'
+  get 'fleet_calculator/calculate', to: 'fleet_calculator#weight_calculate'
+
+
 end
