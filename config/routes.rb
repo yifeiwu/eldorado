@@ -5,6 +5,4 @@ Rails.application.routes.draw do
 
   get 'fleet_calculator/show', to: 'fleet_calculator#show'
   get 'fleet_calculator/calculate', to: 'fleet_calculator#weight_calculate'
-
-
 end

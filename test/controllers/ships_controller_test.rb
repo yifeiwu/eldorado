@@ -5,17 +5,17 @@ class ShipsControllerTest < ActionDispatch::IntegrationTest
     @ship = ships(:one)
   end
 
-  test "should get index" do
+  test 'should get index' do
     get ships_url
     assert_response :success
   end
 
-  test "should get new" do
+  test 'should get new' do
     get new_ship_url
     assert_response :success
   end
 
-  test "should create ship" do
+  test 'should create ship' do
     assert_difference('Ship.count') do
       post ships_url, params: { ship: { ship_capacity: @ship.ship_capacity, ship_name: @ship.ship_name } }
     end
@@ -23,22 +23,22 @@ class ShipsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to ship_url(Ship.last)
   end
 
-  test "should show ship" do
+  test 'should show ship' do
     get ship_url(@ship)
     assert_response :success
   end
 
-  test "should get edit" do
+  test 'should get edit' do
     get edit_ship_url(@ship)
     assert_response :success
   end
 
-  test "should update ship" do
+  test 'should update ship' do
     patch ship_url(@ship), params: { ship: { ship_capacity: @ship.ship_capacity, ship_name: @ship.ship_name } }
     assert_redirected_to ship_url(@ship)
   end
 
-  test "should destroy ship" do
+  test 'should destroy ship' do
     assert_difference('Ship.count', -1) do
       delete ship_url(@ship)
     end

@@ -1,5 +1,5 @@
 class ShipsController < ApplicationController
-  before_action :set_ship, only: [:show, :edit, :update, :destroy]
+  before_action :set_ship, only: %i[show edit update destroy]
 
   # GET /ships
   # GET /ships.json
@@ -9,8 +9,7 @@ class ShipsController < ApplicationController
 
   # GET /ships/1
   # GET /ships/1.json
-  def show
-  end
+  def show; end
 
   # GET /ships/new
   def new
@@ -18,8 +17,7 @@ class ShipsController < ApplicationController
   end
 
   # GET /ships/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /ships
   # POST /ships.json
@@ -62,13 +60,14 @@ class ShipsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_ship
-      @ship = Ship.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def ship_params
-      params.require(:ship).permit(:ship_name, :ship_capacity)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_ship
+    @ship = Ship.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def ship_params
+    params.require(:ship).permit(:ship_name, :ship_capacity)
+  end
 end
